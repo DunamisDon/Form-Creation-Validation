@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('registration-form');
     const feedbackDiv = document.getElementById('form-feedback');
 
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', handleFormSubmit);
+
+    function handleFormSubmit(event) {
         event.preventDefault(); // Prevent form submission
 
         // Retrieve and trim user inputs
@@ -42,5 +44,5 @@ document.addEventListener('DOMContentLoaded', () => {
             feedbackDiv.innerHTML = messages.join('<br>'); // Join messages with <br>
             feedbackDiv.style.color = '#dc3545'; // Red color for error
         }
-    });
+    }
 });
